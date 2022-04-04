@@ -1,0 +1,36 @@
+{
+    "name": "Transum",
+    "version": "0.1",
+    "description": "Summarize Subtitle eligible youtube videos in a go!",
+    "manifest_version": 2,
+    "permissions": ["storage", "webNavigation", "http://127.0.0.1:8000/", "tabs"],
+    "content_scripts": [
+   {
+     "matches": [
+       "https://www.youtube.com/watch?v=*"
+     ],
+     "js": [
+       "contentScript.js"
+     ]
+   }
+ ],
+ "background": {
+  "scripts": ["background.js"],
+  "persistent": false
+},
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/replacely16.png",
+            "32": "images/replacely32.png",
+            "48": "images/replacely48.png",
+            "128": "images/replacely128.png"
+        }
+    },
+    "icons": {
+        "16": "images/replacely16.png",
+        "32": "images/replacely32.png",
+        "48": "images/replacely48.png",
+        "128": "images/replacely128.png"
+    }
+}
